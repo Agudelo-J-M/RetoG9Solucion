@@ -1,8 +1,53 @@
 {
   "version": 2,
-  "dgSpecHash": "ktlQMZTqTWw=",
-  "success": true,
-  "projectFilePath": "E:\\ITM\\Semestres\\2026-1\\Arquitectura Software I\\Entregable 1\\CheckoutEcommerceAppReto\\Refactoring\\Refactoring.csproj",
+  "dgSpecHash": "rOWeyfAaeBg=",
+  "success": false,
+  "projectFilePath": "D:\\7mo semestre\\RetoG9\\Reto-Entragable-1-Arquitectua-de-Software\\CheckoutEcommerceAppReto\\Refactoring\\Refactoring.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.NETCore.App.Ref (= 9.0.14)' for 'net9.0'.",
+      "projectPath": "D:\\7mo semestre\\RetoG9\\Reto-Entragable-1-Arquitectua-de-Software\\CheckoutEcommerceAppReto\\Refactoring\\Refactoring.csproj",
+      "filePath": "D:\\7mo semestre\\RetoG9\\Reto-Entragable-1-Arquitectua-de-Software\\CheckoutEcommerceAppReto\\Refactoring\\Refactoring.csproj",
+      "libraryId": "Microsoft.NETCore.App.Ref",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.WindowsDesktop.App.Ref (= 9.0.14)' for 'net9.0'.",
+      "projectPath": "D:\\7mo semestre\\RetoG9\\Reto-Entragable-1-Arquitectua-de-Software\\CheckoutEcommerceAppReto\\Refactoring\\Refactoring.csproj",
+      "filePath": "D:\\7mo semestre\\RetoG9\\Reto-Entragable-1-Arquitectua-de-Software\\CheckoutEcommerceAppReto\\Refactoring\\Refactoring.csproj",
+      "libraryId": "Microsoft.WindowsDesktop.App.Ref",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.AspNetCore.App.Ref (= 9.0.14)' for 'net9.0'.",
+      "projectPath": "D:\\7mo semestre\\RetoG9\\Reto-Entragable-1-Arquitectua-de-Software\\CheckoutEcommerceAppReto\\Refactoring\\Refactoring.csproj",
+      "filePath": "D:\\7mo semestre\\RetoG9\\Reto-Entragable-1-Arquitectua-de-Software\\CheckoutEcommerceAppReto\\Refactoring\\Refactoring.csproj",
+      "libraryId": "Microsoft.AspNetCore.App.Ref",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.NETCore.App.Host.win-x64 (= 9.0.14)' for 'net9.0'.",
+      "projectPath": "D:\\7mo semestre\\RetoG9\\Reto-Entragable-1-Arquitectua-de-Software\\CheckoutEcommerceAppReto\\Refactoring\\Refactoring.csproj",
+      "filePath": "D:\\7mo semestre\\RetoG9\\Reto-Entragable-1-Arquitectua-de-Software\\CheckoutEcommerceAppReto\\Refactoring\\Refactoring.csproj",
+      "libraryId": "Microsoft.NETCore.App.Host.win-x64",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    }
+  ]
 }
