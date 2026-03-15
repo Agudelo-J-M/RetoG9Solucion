@@ -5,7 +5,7 @@ namespace Refactoring.Infrastructure
 {
     public class PayPalPaymentService : IPaymentService
     {
-        private const decimal MaxApprovedAmount = 100000; // Ejemplo de límite para aprobación
+        private const decimal MaxApprovedAmount = 10000; // Ejemplo de límite para aprobación
 
         public bool ProcessPayment(Order order)
         {

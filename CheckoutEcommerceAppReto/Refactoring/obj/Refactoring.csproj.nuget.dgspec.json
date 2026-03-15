@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\7mo semestre\\RetoG9\\Reto-Entragable-1-Arquitectua-de-Software\\CheckoutEcommerceAppReto\\Refactoring\\Refactoring.csproj": {}
+    "D:\\7mo semestre\\RetoG9\\Reto-Entragable-1-Arquitectua-de-Software\\checkoutEcommerceappreto\\refactoring\\Refactoring.csproj": {}
   },
   "projects": {
-    "D:\\7mo semestre\\RetoG9\\Reto-Entragable-1-Arquitectua-de-Software\\CheckoutEcommerceAppReto\\Refactoring\\Refactoring.csproj": {
+    "D:\\7mo semestre\\RetoG9\\Reto-Entragable-1-Arquitectua-de-Software\\checkoutEcommerceappreto\\refactoring\\Refactoring.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\7mo semestre\\RetoG9\\Reto-Entragable-1-Arquitectua-de-Software\\CheckoutEcommerceAppReto\\Refactoring\\Refactoring.csproj",
+        "projectUniqueName": "D:\\7mo semestre\\RetoG9\\Reto-Entragable-1-Arquitectua-de-Software\\checkoutEcommerceappreto\\refactoring\\Refactoring.csproj",
         "projectName": "Refactoring",
-        "projectPath": "D:\\7mo semestre\\RetoG9\\Reto-Entragable-1-Arquitectua-de-Software\\CheckoutEcommerceAppReto\\Refactoring\\Refactoring.csproj",
+        "projectPath": "D:\\7mo semestre\\RetoG9\\Reto-Entragable-1-Arquitectua-de-Software\\checkoutEcommerceappreto\\refactoring\\Refactoring.csproj",
         "packagesPath": "C:\\Users\\Khasa\\.nuget\\packages\\",
-        "outputPath": "D:\\7mo semestre\\RetoG9\\Reto-Entragable-1-Arquitectua-de-Software\\CheckoutEcommerceAppReto\\Refactoring\\obj\\",
+        "outputPath": "D:\\7mo semestre\\RetoG9\\Reto-Entragable-1-Arquitectua-de-Software\\checkoutEcommerceappreto\\refactoring\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Khasa\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -51,24 +51,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[9.0.14, 9.0.14]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[9.0.14, 9.0.14]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[9.0.14, 9.0.14]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[9.0.14, 9.0.14]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"

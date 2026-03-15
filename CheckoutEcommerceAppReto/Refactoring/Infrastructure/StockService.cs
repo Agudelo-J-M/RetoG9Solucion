@@ -7,7 +7,7 @@ namespace Refactoring.Infrastructure
     {
         public bool ValidateStock(Order order)
         {
-            int stockPrueba = 3;
+            int stockPrueba = 4;
 
             Console.WriteLine("Validando stock...");
 

@@ -5,7 +5,7 @@ namespace Refactoring.Infrastructure
 {
 public class SMSNotificationService : IEmailService
 {
-    public void SendEmail(Order order)
+    public void SendConfirmation(Order order)
     {
         Console.WriteLine("Enviando SMS al cliente...");
         // simular demora en el envío del SMS

@@ -6,7 +6,7 @@
         public required string EmailCliente { get; set; }
         public required string Producto { get; set; }
         public int Cantidad { get; set; }
-        public decimal PrecioUnitario { get; } = 1000;
+        public decimal PrecioUnitario { get; } = 4000;
         public required string MedioPago { get; set; }
         public decimal TotalOrden => Cantidad * PrecioUnitario;
     }

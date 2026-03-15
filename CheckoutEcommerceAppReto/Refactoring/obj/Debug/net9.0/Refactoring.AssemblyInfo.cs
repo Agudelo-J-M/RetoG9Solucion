@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Refactoring")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e6841909ea7d3f45d85a5619201b88d11bbba634")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f147cf8e4e3d041bb068707b43c59cbfa46b7e0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Refactoring")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Refactoring")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
