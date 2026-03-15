@@ -13,8 +13,10 @@ namespace Refactoring
 
             IStockService stockService = new StockService();
             IPaymentService paymentService = new PaymentService();
+            IPaymentService payPalPaymentService = new PayPalPaymentService();
             IInvoiceService invoiceService = new InvoiceService();
             IEmailService emailService = new EmailService();
+            IEmailService smsNotificationService = new SMSNotificationService();
             IOrderRepository orderRepository = new OrderRepository();
 
             Console.WriteLine("=== CREAR NUEVA ORDEN ===");
@@ -34,6 +36,12 @@ namespace Refactoring
             Console.Write("Medio de pago: ");
             string medioPago = Console.ReadLine()!;
 
+            // Determine which payment service to use
+            IPaymentService selectedPaymentService = medioPago.ToLower() == "paypal" ? payPalPaymentService : paymentService;
+
+            // Determine which notification service to use
+            IEmailService selectedEmailService = email.Contains("@") ? emailService : smsNotificationService;
+
             // Crear la orden
             Order order = new Order
             {
@@ -46,9 +54,9 @@ namespace Refactoring
 
             var checkout = new CheckoutService(
                             stockService,
-                            paymentService,
+                            selectedPaymentService,
                             invoiceService,
-                            emailService,
+                            selectedEmailService,
                             orderRepository);
 
             checkout.ProcessOrder(order);

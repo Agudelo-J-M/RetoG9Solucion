@@ -1,31 +1,29 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Refactoring.Application.Interfaces;
+using Refactoring.Domain;
 
 namespace Refactoring.Infrastructure
 {
-public class PayPalPaymentService : IPaymentService
-{
-    private const decimal MaxApprovedAmount = 100.00m; // Ejemplo de límite para aprobación
-
-    public bool ProcessPayment(decimal amount)
+    public class PayPalPaymentService : IPaymentService
     {
-        Console.WriteLine("Simulando Autenticación de PayPal...");
-        // Simular demora en la autenticación
-        Thread.Sleep(1000);
-        Console.WriteLine("Autenticación de PayPal exitosa.");
+        private const decimal MaxApprovedAmount = 100000; // Ejemplo de límite para aprobación
 
-        if (amount <= MaxApprovedAmount)
+        public bool ProcessPayment(Order order)
         {
-            Console.WriteLine($"Pago de {amount:C} aprobado via PayPal.");
-            return true;
-        }
-        else
-        {
-            Console.WriteLine($"Pago de {amount:C} rechazado via PayPal (excede el límite).");
-            return false;
+            Console.WriteLine("Simulando Autenticación de PayPal...");
+            // Simular demora en la autenticación
+            Thread.Sleep(1000);
+            Console.WriteLine("Autenticación de PayPal exitosa.");
+
+            if (order.TotalOrden <= MaxApprovedAmount)
+            {
+                Console.WriteLine($"Pago de {order.TotalOrden:c} aprobado via PayPal.");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine($"Pago de {order.TotalOrden:c} rechazado via PayPal (excede el límite).");
+                return false;
+            }
         }
     }
-}
 }

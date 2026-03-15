@@ -1,18 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Refactoring.Application.Interfaces;
+using Refactoring.Domain;
 
 namespace Refactoring.Infrastructure
 {
 public class SMSNotificationService : IEmailService
 {
-    public void SendEmail(string to, string subject, string body)
+    public void SendEmail(Order order)
     {
         Console.WriteLine("Enviando SMS al cliente...");
         // simular demora en el envío del SMS
         Thread.Sleep(500);
-        Console.WriteLine("SMS enviado al número registrado con éxito.");
+        Console.WriteLine($"SMS enviado al número {order.EmailCliente} con éxito.");
     }
 }
 }
