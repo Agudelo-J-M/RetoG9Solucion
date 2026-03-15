@@ -102,6 +102,107 @@ Debe mantenerse el diseño basado en **abstracciones**.
 
 ---
 
+# 📝 Implementación de las Nuevas Clases Concretas
+
+## PayPalPaymentService
+
+La clase `PayPalPaymentService` implementa la interfaz `IPaymentService` y simula el procesamiento de pagos a través de PayPal. Se encuentra en el directorio `Infrastructure`.
+
+### Funcionalidad
+- Simula la autenticación con PayPal con una demora de 1 segundo.
+- Aprueba pagos menores o iguales a $10000.
+- Rechaza pagos mayores a $10000 para simular límites de transacción.
+
+### Código Principal
+```csharp
+public class PayPalPaymentService : IPaymentService
+{
+    private const decimal MaxApprovedAmount = 10000;
+
+    public bool ProcessPayment(Order order)
+    {
+        Console.WriteLine("Simulando Autenticación de PayPal...");
+        Thread.Sleep(1000);
+        Console.WriteLine("Autenticación de PayPal exitosa.");
+
+        if (order.TotalOrden <= MaxApprovedAmount)
+        {
+            Console.WriteLine($"Pago de {order.TotalOrden:c} aprobado via PayPal.");
+            return true;
+        }
+        else
+        {
+            Console.WriteLine($"Pago de {order.TotalOrden:c} rechazado via PayPal (excede el límite).");
+            return false;
+        }
+    }
+}
+```
+
+## SMSNotificationService
+
+La clase `SMSNotificationService` implementa la interfaz `IEmailService` y simula el envío de notificaciones por SMS. Se encuentra en el directorio `Infrastructure`.
+
+### Funcionalidad
+- Envía un mensaje SMS al cliente confirmando la orden con una demora de 0.5 segundos.
+- Utiliza el campo `EmailCliente` de la orden como número de teléfono.
+
+### Código Principal
+```csharp
+public class SMSNotificationService : IEmailService
+{
+    public void SendConfirmation(Order order)
+    {
+        Console.WriteLine("Enviando SMS al cliente...");
+        Thread.Sleep(500);
+        Console.WriteLine($"SMS enviado al número {order.EmailCliente} con éxito.");
+    }
+}
+```
+
+---
+
+# 🔄 Lógica de Llamado en Program.cs
+
+Toda la lógica de selección de servicios se implementa en `Program.cs` sin modificar otras clases, respetando el principio de Inversión de Dependencias.
+
+## Selección del Servicio de Pago
+
+```csharp
+// Determine which payment service to use
+IPaymentService selectedPaymentService = medioPago.ToLower() == "paypal" ? payPalPaymentService : paymentService;
+```
+
+- Si `medioPago` es igual a "paypal" (ignorando mayúsculas/minúsculas), se utiliza `PayPalPaymentService`.
+- De lo contrario, se utiliza el servicio de pago por defecto (`PaymentService`).
+
+## Selección del Servicio de Notificación
+
+```csharp
+// Determine which notification service to use
+IEmailService selectedEmailService = email.Contains("@") ? emailService : smsNotificationService;
+```
+
+- Si el campo `email` contiene el carácter "@", se asume que es una dirección de correo electrónico y se utiliza `EmailService`.
+- Si no contiene "@", se asume que es un número de teléfono y se utiliza `SMSNotificationService`.
+
+## Inyección de Dependencias
+
+Los servicios seleccionados se pasan al constructor de `CheckoutService`:
+
+```csharp
+var checkout = new CheckoutService(
+    stockService,
+    selectedPaymentService,
+    invoiceService,
+    selectedEmailService,
+    orderRepository);
+```
+
+Esto permite que `CheckoutService` siga dependiendo únicamente de interfaces, manteniendo el desacoplamiento y la extensibilidad del sistema.
+
+---
+
 # 🏗 Estructura Esperada del Proyecto
 
 ```
